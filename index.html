@@ -1,96 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liberia Market - Business Plan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Liberia Market - Buy & Sell Locally</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: "#0047AB", secondary: "#E60000" },
+          borderRadius: {
+            none: "0px",
+            sm: "4px",
+            DEFAULT: "8px",
+            md: "12px",
+            lg: "16px",
+            xl: "20px",
+            "2xl": "24px",
+            "3xl": "32px",
+            full: "9999px",
+            button: "8px",
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .text-primary { color: #0047AB; }
+    .text-secondary { color: #E60000; }
+    .bg-primary { background-color: #0047AB; }
+    .bg-secondary { background-color: #E60000; }
+    .hero-section {
+      background-image: linear-gradient(to right, rgba(255,255,255,1) 30%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 70%, rgba(255,255,255,0) 100%), url('https://static.readdy.ai/image/451889695f757ce4d2d18c69926a1bfd/e9640841401e4392e60323891eda9e3c.jpeg');
+      background-size: cover;
+      background-position: right center;
+    }
+    .category-card:hover .category-icon {
+      color: #E60000;
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    .category-card:hover {
+      border-color: #0047AB;
+      box-shadow: 0 10px 15px -3px rgba(0,71,171,0.1), 0 4px 6px -2px rgba(0,71,171,0.05);
+    }
+    .rounded-button { border-radius: 8px; }
+  </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="bg-white">
 
-    <!-- Navigation (Blue) -->
-    <nav class="bg-blue-800 text-white shadow-lg" aria-label="Main navigation">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-store text-2xl" aria-hidden="true"></i>
-                <span class="text-xl font-bold">Liberia Market</span>
+<!-- Header -->
+<header class="bg-white shadow-sm">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center">
+      <a href="#" class="mr-10">
+        <img src="https://static.readdy.ai/image/451889695f757ce4d2d18c69926a1bfd/10b153c179d8a1f66f1891346a0e3f29.jpeg" alt="Liberia Market Logo" class="h-12 w-auto">
+      </a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="text-primary font-medium border-b-2 border-primary py-1">Home</a>
+        <a href="#" class="text-gray-700 hover:text-primary font-medium py-1">Categories</a>
+        <a href="#" class="text-gray-700 hover:text-primary font-medium py-1">About Us</a>
+        <a href="#" class="text-gray-700 hover:text-primary font-medium py-1">Contact</a>
+      </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+      <div class="relative w-64 hidden md:block">
+        <input type="text" placeholder="Search products..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded focus:outline-none focus:border-primary text-sm">
+        <div class="absolute left-3 top-2.5 w-5 h-5 flex items-center justify-center text-gray-400">
+          <i class="ri-search-line"></i>
+        </div>
+      </div>
+      <a href="#" class="text-gray-700 hover:text-primary">
+        <div class="w-10 h-10 flex items-center justify-center relative">
+          <i class="ri-heart-line text-xl"></i>
+          <span class="absolute -top-1 -right-1 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+        </div>
+      </a>
+      <a href="#" class="text-gray-700 hover:text-primary">
+        <div class="w-10 h-10 flex items-center justify-center">
+          <i class="ri-user-line text-xl"></i>
+        </div>
+      </a>
+      <a href="#seller-upload" class="bg-primary text-white px-5 py-2 rounded-button font-medium whitespace-nowrap hover:bg-primary/90 transition">
+        Post Ad
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section min-h-[400px] flex items-center">
+  <div class="container mx-auto px-4 w-full">
+    <div class="max-w-2xl">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Buy & Sell in Liberia's Largest Marketplace</h1>
+      <p class="text-lg text-gray-700 mb-8">Join thousands of Liberians buying and selling everything from electronics to real estate. Your next great deal is just a click away.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#" class="bg-primary text-white px-8 py-3 rounded-button font-medium text-center whitespace-nowrap hover:bg-primary/90 transition">
+          I Want to Buy
+        </a>
+        <a href="#seller-upload" class="bg-secondary text-white px-8 py-3 rounded-button font-medium text-center whitespace-nowrap hover:bg-secondary/90 transition">
+          I Want to Sell
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seller Upload Form -->
+<section id="seller-upload" class="max-w-xl mx-auto mt-12 bg-white p-8 rounded shadow">
+  <h2 class="text-2xl font-bold mb-4 text-primary">Post Your Product</h2>
+  <form id="productForm">
+    <label class="block mb-2 font-semibold text-gray-700">Product Name</label>
+    <input type="text" id="productName" class="border rounded w-full mb-4 p-2" required>
+
+    <label class="block mb-2 font-semibold text-gray-700">Product Image(s)</label>
+    <input type="file" id="productImages" class="mb-4" accept="image/*" multiple required>
+
+    <button type="submit" class="bg-primary text-white px-6 py-2 rounded hover:bg-primary/90">Submit for Review</button>
+  </form>
+  <div id="uploadStatus" class="mt-4"></div>
+</section>
+
+<!-- Admin Review Simulation -->
+<section class="max-w-3xl mx-auto mt-16 bg-white p-8 rounded shadow">
+  <h2 class="text-2xl font-bold mb-4 text-secondary">Admin: Review Pending Images</h2>
+  <div id="pendingImages" class="grid grid-cols-2 gap-6"></div>
+</section>
+
+<!-- Approved Products Gallery -->
+<section class="max-w-4xl mx-auto mt-16 bg-white p-8 rounded shadow mb-20">
+  <h2 class="text-2xl font-bold mb-4 text-primary">Marketplace - Approved Products</h2>
+  <div id="approvedGallery" class="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <a href="#" class="inline-block mb-4">
+          <img src="https://static.readdy.ai/image/451889695f757ce4d2d18c69926a1bfd/10b153c179d8a1f66f1891346a0e3f29.jpeg" alt="Liberia Market Logo" class="h-12 w-auto">
+        </a>
+        <p class="text-gray-400 mb-6">Liberia's premier online marketplace connecting buyers and sellers across the country.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <i class="ri-facebook-fill text-xl"></i>
             </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-blue-200 transition">About</a>
-                <a href="#model" class="hover:text-blue-200 transition">Business Model</a>
-                <a href="#structure" class="hover:text-blue-200 transition">Structure</a>
-                <a href="#roadmap" class="hover:text-blue-200 transition">Roadmap</a>
-                <a href="#how-it-works" class="hover:text-blue-200 transition">How It Works</a>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <i class="ri-twitter-x-fill text-xl"></i>
             </div>
-            <button class="md:hidden text-xl" id="mobile-menu-button" aria-label="Open mobile menu">
-                <i class="fas fa-bars"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <i class="ri-instagram-fill text-xl"></i>
+            </div>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <div class="w-10 h-10 flex items-center justify-center">
+              <i class="ri-whatsapp-fill text-xl"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Categories</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Real Estate</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Vehicles</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Electronics</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Fashion</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Home & Garden</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Safety Tips</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+        <ul class="space-y-3">
+          <li class="flex">
+            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+              <i class="ri-map-pin-line"></i>
+            </div>
+            <span class="text-gray-400">123 Broad Street, Monrovia, Liberia</span>
+          </li>
+          <li class="flex">
+            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+              <i class="ri-phone-line"></i>
+            </div>
+            <span class="text-gray-400">+231 779 150 388 / 881 666 982</span>
+          </li>
+          <li class="flex">
+            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+              <i class="ri-mail-line"></i>
+            </div>
+            <span class="text-gray-400">info@liberiamarket.com</span>
+          </li>
+        </ul>
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+          <div class="flex">
+            <input type="email" placeholder="Your email" class="bg-gray-800 border-none text-white px-4 py-2 rounded-l focus:outline-none w-full">
+            <button class="bg-primary text-white px-4 py-2 rounded-r hover:bg-primary/90 transition whitespace-nowrap">
+              Subscribe
             </button>
+          </div>
         </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-blue-700 px-4 py-2" id="mobile-menu">
-            <div class="flex flex-col space-y-3">
-                <a href="#about" class="hover:text-blue-200 transition">About</a>
-                <a href="#model" class="hover:text-blue-200 transition">Business Model</a>
-                <a href="#structure" class="hover:text-blue-200 transition">Structure</a>
-                <a href="#roadmap" class="hover:text-blue-200 transition">Roadmap</a>
-                <a href="#how-it-works" class="hover:text-blue-200 transition">How It Works</a>
-            </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Liberia Market. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+            <i class="ri-visa-line text-xl"></i>
+          </div>
+          <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+            <i class="ri-mastercard-line text-xl"></i>
+          </div>
+          <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+            <i class="ri-paypal-line text-xl"></i>
+          </div>
+          <div class="w-8 h-8 flex items-center justify-center text-gray-400">
+            <i class="ri-bank-line text-xl"></i>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <!-- Hero Section (Red-White-Blue Gradient) -->
-    <header class="hero-bg py-16 md:py-24 text-center">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow mb-6">Welcome to Liberia Market</h1>
-            <p class="text-xl md:text-2xl text-white mb-8">Liberia's Local Marketplace - Connect Directly with Buyers & Sellers</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="#buyer-experience" class="bg-white hover:bg-blue-100 text-red-700 font-bold py-4 px-10 rounded-full transition flex items-center justify-center space-x-3 text-lg shadow">
-                    <i class="fas fa-search"></i>
-                    <span>I Want to Buy</span>
-                </a>
-                <a href="#seller-experience" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-10 rounded-full transition flex items-center justify-center space-x-3 text-lg shadow">
-                    <i class="fas fa-store"></i>
-                    <span>I Want to Sell</span>
-                </a>
-            </div>
-            <p class="mt-6 text-white/80">Browse as guest or register for full features</p>
-        </div>
-    </header>
+<script>
+  // Simulate storage for pending and approved images
+  let pendingImages = [];
+  let approvedImages = [];
 
-    <!-- About (Executive Summary) - Sparkling White Centerpiece -->
-    <section id="about" class="py-16 sparkle-zone">
-        <!-- ...[Content unchanged for brevity, paste your full about section here]... -->
-    </section>
+  // Handle seller upload
+  document.getElementById('productForm').onsubmit = function(e) {
+    e.preventDefault();
+    const files = document.getElementById('productImages').files;
+    const name = document.getElementById('productName').value;
+    if (files.length === 0) return;
 
-    <!-- Business Model (Blue Section) -->
-    <section id="model" class="py-16 section-blue text-white">
-        <!-- ...[Content unchanged for brevity, paste your full model section here]... -->
-    </section>
+    for (let file of files) {
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        pendingImages.push({
+          name: name,
+          url: evt.target.result
+        });
+        renderPending();
+        document.getElementById('uploadStatus').innerHTML = '<span class="text-primary">Submitted for review!</span>';
+      };
+      reader.readAsDataURL(file);
+    }
+    document.getElementById('productForm').reset();
+  };
 
-    <!-- Structure Section -->
-    <section id="structure" class="py-16 section-red text-white">
-        <!-- ...[Add your structure section content here]... -->
-    </section>
+  // Render pending images for admin
+  function renderPending() {
+    const pendingDiv = document.getElementById('pendingImages');
+    pendingDiv.innerHTML = '';
+    pendingImages.forEach((img, idx) => {
+      const el = document.createElement('div');
+      el.className = "border rounded p-2 flex flex-col items-center";
+      el.innerHTML = `
+        <img src="${img.url}" alt="Pending" class="h-32 w-32 object-cover rounded mb-2 border">
+        <span class="mb-2">${img.name}</span>
+        <button class="bg-primary text-white px-3 py-1 rounded mb-1" onclick="approveImage(${idx})">Approve</button>
+        <button class="bg-secondary text-white px-3 py-1 rounded" onclick="rejectImage(${idx})">Reject</button>
+      `;
+      pendingDiv.appendChild(el);
+    });
+  }
 
-    <!-- Roadmap Section -->
-    <section id="roadmap" class="py-16 bg-white text-blue-900">
-        <!-- ...[Add your roadmap section content here]... -->
-    </section>
+  // Approve image
+  window.approveImage = function(idx) {
+    approvedImages.push(pendingImages[idx]);
+    pendingImages.splice(idx, 1);
+    renderPending();
+    renderApproved();
+  };
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-16 section-blue text-white">
-        <!-- ...[Add your how-it-works section content here]... -->
-    </section>
+  // Reject image
+  window.rejectImage = function(idx) {
+    alert('Please request a clearer image from the seller.');
+    pendingImages.splice(idx, 1);
+    renderPending();
+  };
 
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-6 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            &copy; 2025 Liberia Market. All rights reserved.
-        </div>
-    </footer>
+  // Render approved images gallery
+  function renderApproved() {
+    const gallery = document.getElementById('approvedGallery');
+    gallery.innerHTML = '';
+    approvedImages.forEach(img => {
+      const el = document.createElement('div');
+      el.className = "border rounded p-2 flex flex-col items-center";
+      el.innerHTML = `
+        <img src="${img.url}" alt="Approved" class="h-32 w-32 object-cover rounded mb-2 border-2 border-primary">
+        <span class="font-semibold">${img.name}</span>
+        <span class="text-green-700 text-xs mt-1">Verified</span>
+      `;
+      gallery.appendChild(el);
+    });
+  }
 
-    <script src="scripts.js"></script>
+  // Initial render
+  renderPending();
+  renderApproved();
+</script>
 </body>
 </html>

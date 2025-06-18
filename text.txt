@@ -1,5 +1,20 @@
 /liberia-market/
-¦
-+-- index.html
-+-- styles.css
-+-- scripts.js
+│
+├── index.html
+├── styles.css
+├── scripts.js
+└── images/
+    ├── logo.jpeg
+    ├── hero-bg.jpeg
+    ├── iphone-product.jpg
+    ├── toyota-product.jpg
+    ├── laptop-product.jpg
+    ├── apartment-product.jpg
+    ├── shoes-product.jpg
+    ├── tv-product.jpg
+    ├── land-product.jpg
+    ├── camera-product.jpg
+    ├── furniture-product.jpg
+    ├── motorcycle-product.jpg
+    ├── macbook-product.jpg
+    └── dining-product.jpg
