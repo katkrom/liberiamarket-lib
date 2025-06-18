@@ -1,9 +1,12 @@
-:where([class^="ri-"])::before { content: "\f3c2"; }
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
 }
+.text-primary { color: #0047AB; }
+.text-secondary { color: #E60000; }
+.bg-primary { background-color: #0047AB; }
+.bg-secondary { background-color: #E60000; }
 .hero-section {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0) 100%), url('images/hero-bg.jpeg');
+  background-image: linear-gradient(to right, rgba(255,255,255,1) 30%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 70%, rgba(255,255,255,0) 100%), url('https://static.readdy.ai/image/451889695f757ce4d2d18c69926a1bfd/e9640841401e4392e60323891eda9e3c.jpeg');
   background-size: cover;
   background-position: right center;
 }
@@ -14,149 +17,27 @@ body {
 }
 .category-card:hover {
   border-color: #0047AB;
-  box-shadow: 0 10px 15px -3px rgba(0, 71, 171, 0.1), 0 4px 6px -2px rgba(0, 71, 171, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0,71,171,0.1), 0 4px 6px -2px rgba(0,71,171,0.05);
 }
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #0047AB;
-  cursor: pointer;
-  border: 2px solid white;
+.rounded-button { border-radius: 8px; }
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 200px;
+    background-position: center right;
+  }
+  .max-w-xl, .max-w-2xl, .max-w-3xl, .max-w-4xl {
+    max-width: 100% !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
 }
-input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #0047AB;
-  cursor: pointer;
-  border: 2px solid white;
+input, button, textarea {
+  font-size: 1rem;
 }
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 6px;
-  border-radius: 5px;
-  background: #e2e8f0;
-  outline: none;
-}
-.custom-checkbox {
-  display: none;
-}
-.custom-checkbox-label {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-}
-.custom-checkbox-label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #0047AB;
-  border-radius: 4px;
-  background-color: white;
-}
-.custom-checkbox:checked + .custom-checkbox-label:before {
-  background-color: #0047AB;
-}
-.custom-checkbox:checked + .custom-checkbox-label:after {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 3px;
-  width: 6px;
-  height: 12px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-.custom-radio {
-  display: none;
-}
-.custom-radio-label {
-  position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-}
-.custom-radio-label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #0047AB;
-  border-radius: 50%;
-  background-color: white;
-}
-.custom-radio:checked + .custom-radio-label:before {
-  border-color: #0047AB;
-}
-.custom-radio:checked + .custom-radio-label:after {
-  content: '';
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #0047AB;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 24px;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-input:checked + .slider {
-  background-color: #0047AB;
-}
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-  z-index: 1;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
+input[type="file"] {
+  padding: 0.3em 0;
 }
